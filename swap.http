@@ -1,0 +1,27 @@
+GET http://localhost:3000/swap/quote-and-execute/So11111111111111111111111111111111111111112/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263/10000000 HTTP/1.1
+
+###
+GET http://localhost:3000/swap/quote-and-execute/So11111111111111111111111111111111111111112/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263/10000000?slippage=100&dynamicSlippage=true&priorityLevel=high&maxPriorityFee=50000&maxRetries=3&commitment=confirmed
+Accept: application/json
+
+###
+GET http://localhost:3000/swap/quote-and-execute/So11111111111111111111111111111111111111112/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263/100000000?slippage=200&dynamicSlippage=true&priorityLevel=veryHigh&maxPriorityFee=200000&maxRetries=5&skipPreflight=true&commitment=confirmed
+Accept: application/json
+
+###
+GET http://localhost:3000/swap/quote-and-execute/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263/So11111111111111111111111111111111111111112/99912577052?slippage=100&dynamicSlippage=true&priorityLevel=high&maxPriorityFee=100000&maxRetries=3&commitment=confirmed
+Accept: application/json
+
+### Start Auto-Sell Monitoring
+POST http://localhost:3000/auto-sell/start
+Content-Type: application/json
+
+{
+  "inputMint": "ViHQLyKxNK4Q9Z5H4A1cJ8LvVEQKj4xZpX7Xq9J8tFGB",
+  "inAmount": "1000000",
+  "initialUsdValue": 100,
+  "boughtPrice": 0.00015,
+  "buyTime": "2025-06-16T9:05:00Z",
+  "slippageBps": 2000,
+  "maxRetries": 3
+}
